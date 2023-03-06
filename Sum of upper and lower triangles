@@ -1,0 +1,58 @@
+
+/*
+Basic Accuracy: 62.08% Submissions: 13705 Points: 1
+Given a square matrix of size N*N, print the sum of upper and lower triangular elements. Upper Triangle consists of elements on the diagonal and above it. The lower triangle consists of elements on the diagonal and below it. 
+
+Example 1:
+
+Input:
+N = 3 
+mat[][] = {{6, 5, 4},
+           {1, 2, 5}
+           {7, 9, 7}}
+Output: 29 32
+*/
+
+
+public class MyClass 
+{
+	static final int NO_OF_CHARS = 256;
+	//StartOfMainMethod
+	public static void main(String[] args) 
+	{
+		int n = 3 ;
+		int	arr[][] = 
+		{
+			{
+				6, 5, 4
+			}
+			,
+			{
+				1, 2, 5
+			}
+			,
+			{
+				7, 9, 7
+			}
+		}
+		;
+		myCode(arr, n);
+	}
+	//EndOfMainMethod
+	public static void myCode(int arr[][], int n) 
+	{
+		int sum1=0;
+		int sum2=0;
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				if(i<=j)
+				sum1+=arr[i][j];
+				if(i>=j)
+				sum2+=arr[i][j];
+			}
+		}
+		System.out.println(sum1+"  "+sum2);
+	}
+}
